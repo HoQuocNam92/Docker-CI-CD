@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: 🏗️ Build images via Docker Compose
-        run: docker-compose build
+        run: docker compose build
 
       - name: 🚀 Push images via Docker Compose
-        run: docker-compose push
+        run: docker compose push

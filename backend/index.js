@@ -10,6 +10,11 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+app.use((req, res, next) => {
+    console.log("🌐 Origin gọi tới là:", req.headers.origin);
+    next();
+});
+
 app.get('/', async (req, res) => {
     try {
         const data = await querySQL('SELECT * FROM users');

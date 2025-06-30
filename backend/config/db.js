@@ -3,12 +3,13 @@ import mysql from 'mysql2/promise';
 export const querySQL = async (query) => {
     try {
         const connection = await mysql.createConnection({
-            host: process.env.DB_HOST || 'db',
-            port: process.env.DB_PORT || 3306,
-            user: process.env.DB_USER || 'root',
-            password: process.env.DB_PASSWORD || '123456',
-            database: process.env.DB_NAME || 'bai3',
+            host: process.env.MYSQLHOST,
+            port: process.env.MYSQLPORT,
+            user: process.env.MYSQLUSER,
+            password: process.env.MYSQLPASSWORD,
+            database: process.env.MYSQLDATABASE,
         });
+
 
 
         const [rows] = await connection.execute(query);

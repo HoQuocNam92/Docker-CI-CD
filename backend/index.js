@@ -5,7 +5,7 @@ import { querySQL } from "./config/db.js";
 const app = express();
 
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: 'https://docker-ci-cd-production-5f1c.up.railway.app',
     methods: ['GET', 'POST'],
 };
 app.use(cors(corsOptions));

@@ -7,7 +7,7 @@ const Header = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:8080');
+        const res = await axios.get('https://docker-ci-cd-production.up.railway.app');
         setData(res.data);
       } catch (err) {
         console.error("Lỗi:", err);

@@ -7,7 +7,7 @@ const Users = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetchAPI()
+        const res = await fetchAPI('')
         setData(res);
       } catch (err) {
         console.error("Lỗi:", err);

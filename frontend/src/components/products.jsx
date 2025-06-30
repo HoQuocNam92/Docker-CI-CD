@@ -5,7 +5,7 @@ const products = () => {
     useEffect(()=>{
         const products = async ()=>{
             try {
-                const res =  await FetchAPI()
+                const res =  await FetchAPI('products')
                 setproducts(res)
             } catch (error) {
                 console.log("Error",error)
@@ -15,7 +15,7 @@ const products = () => {
     },[])
   return (
    <>
-    <h1>products</h1>
+    <h1>Product</h1>
     <div dangerouslySetInnerHTML={{__html : products}}/>
    </>
   )

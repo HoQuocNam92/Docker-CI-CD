@@ -1,11 +1,14 @@
 import './App.css'
-import Header from './components/header'
-
+import { Suspense } from 'react'
+import router from './routes'
+import {RouterProvider} from "react-router"
 function App() {
 
   return (
     <>
-      <Header/>
+     <Suspense fallback={<div>Vui lòng chờ...</div>}>
+        <RouterProvider router={router}/>
+     </Suspense>
     </>
   )
 }

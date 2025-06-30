@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import fetchAPI from '../FetchAPI/fetchAPI'
 
-const Header = () => {
+const Users = () => {
   const [data, setData] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('https://docker-ci-cd-production.up.railway.app');
-        setData(res.data);
+        const res = await fetchAPI()
+        setData(res);
       } catch (err) {
         console.error("Lỗi:", err);
       }
@@ -19,10 +19,10 @@ const Header = () => {
 
   return (
     <div>
-      <h1>Header</h1>
+      <h1>User</h1>
         <div dangerouslySetInnerHTML={{__html : data}}/>
     </div>
   );
 };
 
-export default Header;
+export default Users;

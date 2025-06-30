@@ -19,7 +19,15 @@ app.get('/', async (req, res) => {
         res.status(500).json({ error: "Database query failed" });
     }
 });
-
+app.get('/products', async (req, res) => {
+    try {
+        const data = await querySQL('SELECT * FROM products');
+        res.json(JSON.stringify(data));
+    } catch (error) {
+        console.error("Error querying DB:", error);
+        res.status(500).json({ error: "Database query failed" });
+    }
+});
 app.listen(8080, () => {
     console.log("✅ Backend is running on port 8080");
 });
